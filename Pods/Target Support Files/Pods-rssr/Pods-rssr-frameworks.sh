@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-rssr/DFImageManager.framework"
   install_framework "Pods-rssr/KVNProgress.framework"
   install_framework "Pods-rssr/MWFeedParser.framework"
+  install_framework "Pods-rssr/MagicalRecord.framework"
   install_framework "Pods-rssr/PBWebViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-rssr/DFImageManager.framework"
   install_framework "Pods-rssr/KVNProgress.framework"
   install_framework "Pods-rssr/MWFeedParser.framework"
+  install_framework "Pods-rssr/MagicalRecord.framework"
   install_framework "Pods-rssr/PBWebViewController.framework"
 fi

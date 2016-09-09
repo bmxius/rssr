@@ -9,4 +9,6 @@ pod 'DFImageManager'
 pod 'KVNProgress'
 pod 'PBWebViewController', '~> 0.2'
 
+pod "MagicalRecord"
+
 end

@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  rssr
+
+  Created by Stig on 09.09.16.
+  Copyright © 2016 YESS. All rights reserved.
+*/
+
+
+"OPEN_IN_SAFARI" = "Открыть в Safari";
+"TODAY" = "Сегодня";
+"NO_INTERNET" = "Требуется подключение к интернету";
+"CANT_LOAD" = "Не удалось загрузить данные";
+"FAVORITES" = "Избранное";
+"ALL" = "Все";
+"EMPTY_LIST" = "Список пуст";
+"SAVE" = "Сохранить";
+"ERROR" = "ошибка";
+"WARNING" = "внимание";
+"CANCEL" = "отмена";
+"DOWNLOAD" = "Загрузка";
+"RSS_DOWNLOAD" = "Загрузка потоков";
+"DELETE" = "Удалить";
+"EDIT" = "Редактировать";
+"IN_FAV" = "В избранное";
+"URL" = "Ссылка";
+"NAME" = "Название";
+"LOADED_WITH_ERRORS" = "Загружено с ошибками";
+
+"ITEM_WITH_THIS_NAME_EXISTS" = "Поток с таким названием уже есть";
+"THIS_ITEM_URL_EXISTS" = "Поток с этой ссылкой уже есть";
+"TOO_SHORT_NAME" = "Слишком короткое имя";
+"DONE" = "Готово";

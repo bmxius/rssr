@@ -11,13 +11,24 @@
 		53828C421D82F7CF00719F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C411D82F7CF00719F73 /* AppDelegate.m */; };
 		53828C481D82F7CF00719F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53828C461D82F7CF00719F73 /* Main.storyboard */; };
 		53828C4D1D82F7CF00719F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53828C4B1D82F7CF00719F73 /* LaunchScreen.storyboard */; };
-		53828C591D83053F00719F73 /* RSRSplashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C581D83053F00719F73 /* RSRSplashVC.m */; };
-		53828C5C1D83054800719F73 /* RSRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C5B1D83054800719F73 /* RSRMainVC.m */; };
-		53828C621D83056400719F73 /* RSRListEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C611D83056400719F73 /* RSRListEditVC.m */; };
-		53828C651D83057600719F73 /* RSRItemDetailedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C641D83057600719F73 /* RSRItemDetailedVC.m */; };
 		53828C6B1D8306DD00719F73 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53828C691D8306DD00719F73 /* SVProgressHUD.bundle */; };
 		53828C6C1D8306DD00719F73 /* Yess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53828C6A1D8306DD00719F73 /* Yess.framework */; };
 		53828C711D830A4400719F73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53828C701D830A4400719F73 /* Images.xcassets */; };
+		53828C761D83184B00719F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53828C751D83184B00719F73 /* Localizable.strings */; };
+		53828C811D83193F00719F73 /* RSRItemDetailedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C7A1D83193F00719F73 /* RSRItemDetailedVC.m */; };
+		53828C821D83193F00719F73 /* RSRListEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C7C1D83193F00719F73 /* RSRListEditVC.m */; };
+		53828C831D83193F00719F73 /* RSRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C7E1D83193F00719F73 /* RSRMainVC.m */; };
+		53828C841D83193F00719F73 /* RSRSplashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C801D83193F00719F73 /* RSRSplashVC.m */; };
+		53828C8B1D83194F00719F73 /* AbcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C871D83194F00719F73 /* AbcViewController.m */; };
+		53828C8C1D83194F00719F73 /* RSRAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C8A1D83194F00719F73 /* RSRAppHelper.m */; };
+		53828C8F1D83293900719F73 /* Feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53828C8D1D83293900719F73 /* Feed.xcdatamodeld */; };
+		53828CA01D832E1600719F73 /* ListItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C9B1D832E1600719F73 /* ListItem+CoreDataProperties.m */; };
+		53828CA11D832E1600719F73 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C9D1D832E1600719F73 /* ListItem.m */; };
+		53828CA51D8330FB00719F73 /* RSRListItemAddEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CA41D8330FB00719F73 /* RSRListItemAddEdit.m */; };
+		53828CAA1D833BE100719F73 /* RSRItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CA81D833BE100719F73 /* RSRItemTableCell.m */; };
+		53828CAB1D833BE100719F73 /* RSRItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53828CA91D833BE100719F73 /* RSRItemTableCell.xib */; };
+		53828CB61D833E4700719F73 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CB31D833E4700719F73 /* FeedItem.m */; };
+		53828CB71D833E4700719F73 /* FeedItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CB51D833E4700719F73 /* FeedItem+CoreDataProperties.m */; };
 		C2EA894007B548DC40F971CD /* Pods_rssr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,18 +41,37 @@
 		53828C471D82F7CF00719F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53828C4C1D82F7CF00719F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53828C4E1D82F7CF00719F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53828C561D82FE0800719F73 /* Consts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
-		53828C571D83053F00719F73 /* RSRSplashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRSplashVC.h; sourceTree = "<group>"; };
-		53828C581D83053F00719F73 /* RSRSplashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRSplashVC.m; sourceTree = "<group>"; };
-		53828C5A1D83054800719F73 /* RSRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRMainVC.h; sourceTree = "<group>"; };
-		53828C5B1D83054800719F73 /* RSRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRMainVC.m; sourceTree = "<group>"; };
-		53828C601D83056400719F73 /* RSRListEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListEditVC.h; sourceTree = "<group>"; };
-		53828C611D83056400719F73 /* RSRListEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListEditVC.m; sourceTree = "<group>"; };
-		53828C631D83057600719F73 /* RSRItemDetailedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRItemDetailedVC.h; sourceTree = "<group>"; };
-		53828C641D83057600719F73 /* RSRItemDetailedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRItemDetailedVC.m; sourceTree = "<group>"; };
 		53828C691D8306DD00719F73 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		53828C6A1D8306DD00719F73 /* Yess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yess.framework; sourceTree = "<group>"; };
 		53828C701D830A4400719F73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		53828C751D83184B00719F73 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		53828C791D83193F00719F73 /* RSRItemDetailedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRItemDetailedVC.h; sourceTree = "<group>"; };
+		53828C7A1D83193F00719F73 /* RSRItemDetailedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRItemDetailedVC.m; sourceTree = "<group>"; };
+		53828C7B1D83193F00719F73 /* RSRListEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListEditVC.h; sourceTree = "<group>"; };
+		53828C7C1D83193F00719F73 /* RSRListEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListEditVC.m; sourceTree = "<group>"; };
+		53828C7D1D83193F00719F73 /* RSRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRMainVC.h; sourceTree = "<group>"; };
+		53828C7E1D83193F00719F73 /* RSRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRMainVC.m; sourceTree = "<group>"; };
+		53828C7F1D83193F00719F73 /* RSRSplashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRSplashVC.h; sourceTree = "<group>"; };
+		53828C801D83193F00719F73 /* RSRSplashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRSplashVC.m; sourceTree = "<group>"; };
+		53828C861D83194F00719F73 /* AbcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbcViewController.h; sourceTree = "<group>"; };
+		53828C871D83194F00719F73 /* AbcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbcViewController.m; sourceTree = "<group>"; };
+		53828C881D83194F00719F73 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		53828C891D83194F00719F73 /* RSRAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRAppHelper.h; sourceTree = "<group>"; };
+		53828C8A1D83194F00719F73 /* RSRAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRAppHelper.m; sourceTree = "<group>"; };
+		53828C8E1D83293900719F73 /* Feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feed.xcdatamodel; sourceTree = "<group>"; };
+		53828C9A1D832E1600719F73 /* ListItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ListItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		53828C9B1D832E1600719F73 /* ListItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ListItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		53828C9C1D832E1600719F73 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		53828C9D1D832E1600719F73 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
+		53828CA31D8330FB00719F73 /* RSRListItemAddEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListItemAddEdit.h; sourceTree = "<group>"; };
+		53828CA41D8330FB00719F73 /* RSRListItemAddEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListItemAddEdit.m; sourceTree = "<group>"; };
+		53828CA71D833BE100719F73 /* RSRItemTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRItemTableCell.h; sourceTree = "<group>"; };
+		53828CA81D833BE100719F73 /* RSRItemTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRItemTableCell.m; sourceTree = "<group>"; };
+		53828CA91D833BE100719F73 /* RSRItemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSRItemTableCell.xib; sourceTree = "<group>"; };
+		53828CB21D833E4700719F73 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
+		53828CB31D833E4700719F73 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
+		53828CB41D833E4700719F73 /* FeedItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		53828CB51D833E4700719F73 /* FeedItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedItem+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C6E335EEEDF32E45D5A74F /* Pods-rssr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssr.release.xcconfig"; path = "Pods/Target Support Files/Pods-rssr/Pods-rssr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,13 +110,14 @@
 		53828C3C1D82F7CF00719F73 /* rssr */ = {
 			isa = PBXGroup;
 			children = (
-				53828C6F1D830A4400719F73 /* Resources */,
 				53828C4B1D82F7CF00719F73 /* LaunchScreen.storyboard */,
+				53828C6F1D830A4400719F73 /* Resources */,
 				53828C401D82F7CF00719F73 /* AppDelegate.h */,
 				53828C411D82F7CF00719F73 /* AppDelegate.m */,
-				53828C561D82FE0800719F73 /* Consts.h */,
+				53828C851D83194F00719F73 /* Helpers */,
 				53828C461D82F7CF00719F73 /* Main.storyboard */,
-				53828C661D83057E00719F73 /* ViewControllers */,
+				53828CA61D833BBB00719F73 /* Views */,
+				53828C781D83193F00719F73 /* ViewControllers */,
 				53828C671D8306CD00719F73 /* ThirdParty */,
 				53828C3D1D82F7CF00719F73 /* Supporting Files */,
 			);
@@ -97,24 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				53828C4E1D82F7CF00719F73 /* Info.plist */,
+				53828C751D83184B00719F73 /* Localizable.strings */,
 				53828C3E1D82F7CF00719F73 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		53828C661D83057E00719F73 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				53828C571D83053F00719F73 /* RSRSplashVC.h */,
-				53828C581D83053F00719F73 /* RSRSplashVC.m */,
-				53828C5A1D83054800719F73 /* RSRMainVC.h */,
-				53828C5B1D83054800719F73 /* RSRMainVC.m */,
-				53828C601D83056400719F73 /* RSRListEditVC.h */,
-				53828C611D83056400719F73 /* RSRListEditVC.m */,
-				53828C631D83057600719F73 /* RSRItemDetailedVC.h */,
-				53828C641D83057600719F73 /* RSRItemDetailedVC.m */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		53828C671D8306CD00719F73 /* ThirdParty */ = {
@@ -141,6 +158,62 @@
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
+		};
+		53828C781D83193F00719F73 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53828C7F1D83193F00719F73 /* RSRSplashVC.h */,
+				53828C801D83193F00719F73 /* RSRSplashVC.m */,
+				53828C7D1D83193F00719F73 /* RSRMainVC.h */,
+				53828C7E1D83193F00719F73 /* RSRMainVC.m */,
+				53828C791D83193F00719F73 /* RSRItemDetailedVC.h */,
+				53828C7A1D83193F00719F73 /* RSRItemDetailedVC.m */,
+				53828C7B1D83193F00719F73 /* RSRListEditVC.h */,
+				53828C7C1D83193F00719F73 /* RSRListEditVC.m */,
+				53828CA31D8330FB00719F73 /* RSRListItemAddEdit.h */,
+				53828CA41D8330FB00719F73 /* RSRListItemAddEdit.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		53828C851D83194F00719F73 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53828C881D83194F00719F73 /* Consts.h */,
+				53828C861D83194F00719F73 /* AbcViewController.h */,
+				53828C871D83194F00719F73 /* AbcViewController.m */,
+				53828C891D83194F00719F73 /* RSRAppHelper.h */,
+				53828C8A1D83194F00719F73 /* RSRAppHelper.m */,
+				53828CA21D832E1D00719F73 /* Model */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		53828CA21D832E1D00719F73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53828CB21D833E4700719F73 /* FeedItem.h */,
+				53828CB31D833E4700719F73 /* FeedItem.m */,
+				53828CB41D833E4700719F73 /* FeedItem+CoreDataProperties.h */,
+				53828CB51D833E4700719F73 /* FeedItem+CoreDataProperties.m */,
+				53828C9A1D832E1600719F73 /* ListItem+CoreDataProperties.h */,
+				53828C9B1D832E1600719F73 /* ListItem+CoreDataProperties.m */,
+				53828C9C1D832E1600719F73 /* ListItem.h */,
+				53828C9D1D832E1600719F73 /* ListItem.m */,
+				53828C8D1D83293900719F73 /* Feed.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		53828CA61D833BBB00719F73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53828CA71D833BE100719F73 /* RSRItemTableCell.h */,
+				53828CA81D833BE100719F73 /* RSRItemTableCell.m */,
+				53828CA91D833BE100719F73 /* RSRItemTableCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
 		};
 		C5EC277F8AF8492D3B3BC580 /* Pods */ = {
 			isa = PBXGroup;
@@ -219,10 +292,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53828C761D83184B00719F73 /* Localizable.strings in Resources */,
 				53828C4D1D82F7CF00719F73 /* LaunchScreen.storyboard in Resources */,
 				53828C711D830A4400719F73 /* Images.xcassets in Resources */,
 				53828C481D82F7CF00719F73 /* Main.storyboard in Resources */,
 				53828C6B1D8306DD00719F73 /* SVProgressHUD.bundle in Resources */,
+				53828CAB1D833BE100719F73 /* RSRItemTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +356,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53828C621D83056400719F73 /* RSRListEditVC.m in Sources */,
 				53828C421D82F7CF00719F73 /* AppDelegate.m in Sources */,
-				53828C591D83053F00719F73 /* RSRSplashVC.m in Sources */,
+				53828CA11D832E1600719F73 /* ListItem.m in Sources */,
+				53828CA01D832E1600719F73 /* ListItem+CoreDataProperties.m in Sources */,
+				53828C841D83193F00719F73 /* RSRSplashVC.m in Sources */,
+				53828CB61D833E4700719F73 /* FeedItem.m in Sources */,
+				53828C831D83193F00719F73 /* RSRMainVC.m in Sources */,
+				53828C8F1D83293900719F73 /* Feed.xcdatamodeld in Sources */,
+				53828C8B1D83194F00719F73 /* AbcViewController.m in Sources */,
+				53828C8C1D83194F00719F73 /* RSRAppHelper.m in Sources */,
+				53828CAA1D833BE100719F73 /* RSRItemTableCell.m in Sources */,
+				53828CA51D8330FB00719F73 /* RSRListItemAddEdit.m in Sources */,
+				53828C811D83193F00719F73 /* RSRItemDetailedVC.m in Sources */,
+				53828CB71D833E4700719F73 /* FeedItem+CoreDataProperties.m in Sources */,
 				53828C3F1D82F7CF00719F73 /* main.m in Sources */,
-				53828C651D83057600719F73 /* RSRItemDetailedVC.m in Sources */,
-				53828C5C1D83054800719F73 /* RSRMainVC.m in Sources */,
+				53828C821D83193F00719F73 /* RSRListEditVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		53828C8D1D83293900719F73 /* Feed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53828C8E1D83293900719F73 /* Feed.xcdatamodel */,
+			);
+			currentVersion = 53828C8E1D83293900719F73 /* Feed.xcdatamodel */;
+			path = Feed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 53828C321D82F7CF00719F73 /* Project object */;
 }

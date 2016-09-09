@@ -260,6 +260,7 @@
 		
 		// Create NSXMLParser
 		if (data) {
+            
 			NSXMLParser *newFeedParser = [[NSXMLParser alloc] initWithData:data];
 			self.feedParser = newFeedParser;
 			if (feedParser) { 

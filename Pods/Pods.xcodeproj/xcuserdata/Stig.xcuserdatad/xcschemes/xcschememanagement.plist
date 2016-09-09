@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PBWebViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C9E5F5E64C9315DB5FAFE37B6AD9FDD</key>
+		<key>4063AF2065DC37CC6FD0AAB610CD8CD2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C8DF847CF6AAF5D6D00344B27D7F7FE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D58D76EC529B4A92F3E5EDADE0A96661</key>
 		<dict>
 			<key>primary</key>
 			<true/>
