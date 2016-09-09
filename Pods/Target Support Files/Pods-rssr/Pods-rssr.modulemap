@@ -1,0 +1,6 @@
+framework module Pods_rssr {
+  umbrella header "Pods-rssr-umbrella.h"
+
+  export *
+  module * { export * }
+}

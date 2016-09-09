@@ -10,19 +10,40 @@
 		53828C3F1D82F7CF00719F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C3E1D82F7CF00719F73 /* main.m */; };
 		53828C421D82F7CF00719F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C411D82F7CF00719F73 /* AppDelegate.m */; };
 		53828C481D82F7CF00719F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53828C461D82F7CF00719F73 /* Main.storyboard */; };
-		53828C4A1D82F7CF00719F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53828C491D82F7CF00719F73 /* Assets.xcassets */; };
 		53828C4D1D82F7CF00719F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53828C4B1D82F7CF00719F73 /* LaunchScreen.storyboard */; };
+		53828C591D83053F00719F73 /* RSRSplashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C581D83053F00719F73 /* RSRSplashVC.m */; };
+		53828C5C1D83054800719F73 /* RSRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C5B1D83054800719F73 /* RSRMainVC.m */; };
+		53828C621D83056400719F73 /* RSRListEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C611D83056400719F73 /* RSRListEditVC.m */; };
+		53828C651D83057600719F73 /* RSRItemDetailedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C641D83057600719F73 /* RSRItemDetailedVC.m */; };
+		53828C6B1D8306DD00719F73 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53828C691D8306DD00719F73 /* SVProgressHUD.bundle */; };
+		53828C6C1D8306DD00719F73 /* Yess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53828C6A1D8306DD00719F73 /* Yess.framework */; };
+		53828C711D830A4400719F73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53828C701D830A4400719F73 /* Images.xcassets */; };
+		C2EA894007B548DC40F971CD /* Pods_rssr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0292C90085F5BCFBFBCE0677 /* Pods-rssr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rssr/Pods-rssr.debug.xcconfig"; sourceTree = "<group>"; };
 		53828C3A1D82F7CF00719F73 /* rssr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rssr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53828C3E1D82F7CF00719F73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53828C401D82F7CF00719F73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53828C411D82F7CF00719F73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		53828C471D82F7CF00719F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53828C491D82F7CF00719F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		53828C4C1D82F7CF00719F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53828C4E1D82F7CF00719F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53828C561D82FE0800719F73 /* Consts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		53828C571D83053F00719F73 /* RSRSplashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRSplashVC.h; sourceTree = "<group>"; };
+		53828C581D83053F00719F73 /* RSRSplashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRSplashVC.m; sourceTree = "<group>"; };
+		53828C5A1D83054800719F73 /* RSRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRMainVC.h; sourceTree = "<group>"; };
+		53828C5B1D83054800719F73 /* RSRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRMainVC.m; sourceTree = "<group>"; };
+		53828C601D83056400719F73 /* RSRListEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListEditVC.h; sourceTree = "<group>"; };
+		53828C611D83056400719F73 /* RSRListEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListEditVC.m; sourceTree = "<group>"; };
+		53828C631D83057600719F73 /* RSRItemDetailedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRItemDetailedVC.h; sourceTree = "<group>"; };
+		53828C641D83057600719F73 /* RSRItemDetailedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRItemDetailedVC.m; sourceTree = "<group>"; };
+		53828C691D8306DD00719F73 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		53828C6A1D8306DD00719F73 /* Yess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yess.framework; sourceTree = "<group>"; };
+		53828C701D830A4400719F73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C6E335EEEDF32E45D5A74F /* Pods-rssr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssr.release.xcconfig"; path = "Pods/Target Support Files/Pods-rssr/Pods-rssr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53828C6C1D8306DD00719F73 /* Yess.framework in Frameworks */,
+				C2EA894007B548DC40F971CD /* Pods_rssr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +64,8 @@
 			children = (
 				53828C3C1D82F7CF00719F73 /* rssr */,
 				53828C3B1D82F7CF00719F73 /* Products */,
+				C5EC277F8AF8492D3B3BC580 /* Pods */,
+				DDB0EAE6404D62C2A78F3FF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,12 +80,14 @@
 		53828C3C1D82F7CF00719F73 /* rssr */ = {
 			isa = PBXGroup;
 			children = (
-				53828C541D82F81000719F73 /* Resources */,
+				53828C6F1D830A4400719F73 /* Resources */,
 				53828C4B1D82F7CF00719F73 /* LaunchScreen.storyboard */,
 				53828C401D82F7CF00719F73 /* AppDelegate.h */,
 				53828C411D82F7CF00719F73 /* AppDelegate.m */,
+				53828C561D82FE0800719F73 /* Consts.h */,
 				53828C461D82F7CF00719F73 /* Main.storyboard */,
-				53828C551D82F81000719F73 /* ThirdParty */,
+				53828C661D83057E00719F73 /* ViewControllers */,
+				53828C671D8306CD00719F73 /* ThirdParty */,
 				53828C3D1D82F7CF00719F73 /* Supporting Files */,
 			);
 			path = rssr;
@@ -75,19 +102,61 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		53828C541D82F81000719F73 /* Resources */ = {
+		53828C661D83057E00719F73 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				53828C491D82F7CF00719F73 /* Assets.xcassets */,
+				53828C571D83053F00719F73 /* RSRSplashVC.h */,
+				53828C581D83053F00719F73 /* RSRSplashVC.m */,
+				53828C5A1D83054800719F73 /* RSRMainVC.h */,
+				53828C5B1D83054800719F73 /* RSRMainVC.m */,
+				53828C601D83056400719F73 /* RSRListEditVC.h */,
+				53828C611D83056400719F73 /* RSRListEditVC.m */,
+				53828C631D83057600719F73 /* RSRItemDetailedVC.h */,
+				53828C641D83057600719F73 /* RSRItemDetailedVC.m */,
 			);
-			path = Resources;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		53828C551D82F81000719F73 /* ThirdParty */ = {
+		53828C671D8306CD00719F73 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				53828C681D8306DD00719F73 /* YESS */,
 			);
 			path = ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
+		53828C681D8306DD00719F73 /* YESS */ = {
+			isa = PBXGroup;
+			children = (
+				53828C691D8306DD00719F73 /* SVProgressHUD.bundle */,
+				53828C6A1D8306DD00719F73 /* Yess.framework */,
+			);
+			path = YESS;
+			sourceTree = "<group>";
+		};
+		53828C6F1D830A4400719F73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53828C701D830A4400719F73 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		C5EC277F8AF8492D3B3BC580 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0292C90085F5BCFBFBCE0677 /* Pods-rssr.debug.xcconfig */,
+				B9C6E335EEEDF32E45D5A74F /* Pods-rssr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DDB0EAE6404D62C2A78F3FF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,9 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53828C511D82F7CF00719F73 /* Build configuration list for PBXNativeTarget "rssr" */;
 			buildPhases = (
+				FBC0205608B82D2D09CC21D8 /* Check Pods Manifest.lock */,
 				53828C361D82F7CF00719F73 /* Sources */,
 				53828C371D82F7CF00719F73 /* Frameworks */,
 				53828C381D82F7CF00719F73 /* Resources */,
+				C6C55291795ECD10ECCCC997 /* Embed Pods Frameworks */,
+				2FBE35DB853E5764D3099A6B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,20 +220,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				53828C4D1D82F7CF00719F73 /* LaunchScreen.storyboard in Resources */,
-				53828C4A1D82F7CF00719F73 /* Assets.xcassets in Resources */,
+				53828C711D830A4400719F73 /* Images.xcassets in Resources */,
 				53828C481D82F7CF00719F73 /* Main.storyboard in Resources */,
+				53828C6B1D8306DD00719F73 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FBE35DB853E5764D3099A6B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rssr/Pods-rssr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6C55291795ECD10ECCCC997 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rssr/Pods-rssr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBC0205608B82D2D09CC21D8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53828C361D82F7CF00719F73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53828C621D83056400719F73 /* RSRListEditVC.m in Sources */,
 				53828C421D82F7CF00719F73 /* AppDelegate.m in Sources */,
+				53828C591D83053F00719F73 /* RSRSplashVC.m in Sources */,
 				53828C3F1D82F7CF00719F73 /* main.m in Sources */,
+				53828C651D83057600719F73 /* RSRItemDetailedVC.m in Sources */,
+				53828C5C1D83054800719F73 /* RSRMainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +396,13 @@
 		};
 		53828C521D82F7CF00719F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0292C90085F5BCFBFBCE0677 /* Pods-rssr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty/YESS",
+				);
 				INFOPLIST_FILE = rssr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,8 +413,13 @@
 		};
 		53828C531D82F7CF00719F73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C6E335EEEDF32E45D5A74F /* Pods-rssr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty/YESS",
+				);
 				INFOPLIST_FILE = rssr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -312,6 +447,7 @@
 				53828C531D82F7CF00719F73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
