@@ -59,7 +59,9 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self askPastboard];
+    if (!self.itemList) {
+        [self askPastboard];
+    }
 }
 
 - (void)askPastboard{

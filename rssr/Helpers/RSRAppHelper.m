@@ -41,7 +41,7 @@
     self = [super init];
     if (self) {
         
-        _defaultsListAll = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:YES];
+        _defaultsListAll = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO];
     }
     return self;
 }
@@ -56,7 +56,7 @@
         _loadCounter = 0;
         _errorCounter = 0;
         if (loadNew) {
-            _defaultsListAll = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:YES];
+            _defaultsListAll = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO];
         }
         if (!_defaultsListAll.count) {
             kPostNotif(kNotificationFeed, @(0));

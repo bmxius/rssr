@@ -47,7 +47,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    _listItems = [ListItem MR_findAll];
+    _listItems = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO];
     [self.tableViewList reloadData];
 }
 
@@ -115,7 +115,7 @@
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
         
-        _listItems = [ListItem MR_findAll];
+        _listItems = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO];
         [self.tableViewList reloadData];
         [Utils hidePreloader];
         if (contextDidSave) {

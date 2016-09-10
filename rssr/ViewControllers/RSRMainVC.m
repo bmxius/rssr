@@ -67,6 +67,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    if (self.webViewController) {
+        self.webViewController = nil;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -76,30 +79,32 @@
 
 - (void)onApperView{
 
-    [self selectorSegment:self.segmentControlList];
+    [self selectorSegment:nil];
 }
 
 - (IBAction)selectorSegment:(UISegmentedControl*)sender{
     
    // NSDate *methodStart = [NSDate date];
    
-    sender.userInteractionEnabled = NO;
+    self.segmentControlList.userInteractionEnabled = NO;
     
     _fetchedResultsControllers = [NSMutableDictionary new];
-    if (sender.selectedSegmentIndex == 0) {
-        _listItems = [ListItem MR_findAll];
+    if (self.segmentControlList.selectedSegmentIndex == 0) {
+        _listItems = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO];
     } else {
-        _listItems = [ListItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"isFavorite == %@",@1]];
+        _listItems = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:NO withPredicate:[NSPredicate predicateWithFormat:@"isFavorite == %@",@1]];
     }
     
 //    NSDate *methodFinish = [NSDate date];
 //    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
 //    NSLog(@"executionTime1 = %f", executionTime);
     
-    [self.tableViewList setContentOffset:CGPointZero animated:NO];
+    if (sender) {
+        [self.tableViewList setContentOffset:CGPointZero animated:NO];
+    }
     [self.tableViewList reloadData];
     
-    sender.userInteractionEnabled = YES;
+    self.segmentControlList.userInteractionEnabled = YES;
     
 //    NSDate *methodFinish2 = [NSDate date];
 //    NSTimeInterval executionTime2 = [methodFinish2 timeIntervalSinceDate:methodStart];
@@ -145,9 +150,17 @@
     return [[[self fetchedResultsControllerForListItem:_listItems[section]] fetchedObjects] count];
 }
 
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
     ListItem *item = _listItems[section];
-    return item.name;
+    
+    UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 24)];
+    titleLab.backgroundColor = kColorOrangeList;
+    titleLab.text = [NSString stringWithFormat:@"   %@",item.name];
+    titleLab.textColor = kColorLight;
+    titleLab.font = [UIFont systemFontOfSize:15];
+    
+    return titleLab;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
