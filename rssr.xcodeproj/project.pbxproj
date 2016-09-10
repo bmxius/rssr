@@ -25,10 +25,12 @@
 		53828CA01D832E1600719F73 /* ListItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C9B1D832E1600719F73 /* ListItem+CoreDataProperties.m */; };
 		53828CA11D832E1600719F73 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828C9D1D832E1600719F73 /* ListItem.m */; };
 		53828CA51D8330FB00719F73 /* RSRListItemAddEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CA41D8330FB00719F73 /* RSRListItemAddEdit.m */; };
-		53828CAA1D833BE100719F73 /* RSRItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CA81D833BE100719F73 /* RSRItemTableCell.m */; };
-		53828CAB1D833BE100719F73 /* RSRItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53828CA91D833BE100719F73 /* RSRItemTableCell.xib */; };
+		53828CAA1D833BE100719F73 /* RSRFeedItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CA81D833BE100719F73 /* RSRFeedItemTableCell.m */; };
+		53828CAB1D833BE100719F73 /* RSRFeedItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53828CA91D833BE100719F73 /* RSRFeedItemTableCell.xib */; };
 		53828CB61D833E4700719F73 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CB31D833E4700719F73 /* FeedItem.m */; };
 		53828CB71D833E4700719F73 /* FeedItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CB51D833E4700719F73 /* FeedItem+CoreDataProperties.m */; };
+		53828CBB1D84650700719F73 /* RSRListItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53828CB91D84650700719F73 /* RSRListItemTableCell.m */; };
+		53828CBC1D84650700719F73 /* RSRListItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53828CBA1D84650700719F73 /* RSRListItemTableCell.xib */; };
 		C2EA894007B548DC40F971CD /* Pods_rssr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,13 +67,16 @@
 		53828C9D1D832E1600719F73 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 		53828CA31D8330FB00719F73 /* RSRListItemAddEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListItemAddEdit.h; sourceTree = "<group>"; };
 		53828CA41D8330FB00719F73 /* RSRListItemAddEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListItemAddEdit.m; sourceTree = "<group>"; };
-		53828CA71D833BE100719F73 /* RSRItemTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRItemTableCell.h; sourceTree = "<group>"; };
-		53828CA81D833BE100719F73 /* RSRItemTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRItemTableCell.m; sourceTree = "<group>"; };
-		53828CA91D833BE100719F73 /* RSRItemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSRItemTableCell.xib; sourceTree = "<group>"; };
+		53828CA71D833BE100719F73 /* RSRFeedItemTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRFeedItemTableCell.h; sourceTree = "<group>"; };
+		53828CA81D833BE100719F73 /* RSRFeedItemTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRFeedItemTableCell.m; sourceTree = "<group>"; };
+		53828CA91D833BE100719F73 /* RSRFeedItemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSRFeedItemTableCell.xib; sourceTree = "<group>"; };
 		53828CB21D833E4700719F73 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
 		53828CB31D833E4700719F73 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
 		53828CB41D833E4700719F73 /* FeedItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedItem+CoreDataProperties.h"; sourceTree = "<group>"; };
 		53828CB51D833E4700719F73 /* FeedItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		53828CB81D84650700719F73 /* RSRListItemTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRListItemTableCell.h; sourceTree = "<group>"; };
+		53828CB91D84650700719F73 /* RSRListItemTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRListItemTableCell.m; sourceTree = "<group>"; };
+		53828CBA1D84650700719F73 /* RSRListItemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSRListItemTableCell.xib; sourceTree = "<group>"; };
 		9D6B96FCF64843F7B78A22EA /* Pods_rssr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C6E335EEEDF32E45D5A74F /* Pods-rssr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssr.release.xcconfig"; path = "Pods/Target Support Files/Pods-rssr/Pods-rssr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,9 +213,12 @@
 		53828CA61D833BBB00719F73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				53828CA71D833BE100719F73 /* RSRItemTableCell.h */,
-				53828CA81D833BE100719F73 /* RSRItemTableCell.m */,
-				53828CA91D833BE100719F73 /* RSRItemTableCell.xib */,
+				53828CA71D833BE100719F73 /* RSRFeedItemTableCell.h */,
+				53828CA81D833BE100719F73 /* RSRFeedItemTableCell.m */,
+				53828CA91D833BE100719F73 /* RSRFeedItemTableCell.xib */,
+				53828CB81D84650700719F73 /* RSRListItemTableCell.h */,
+				53828CB91D84650700719F73 /* RSRListItemTableCell.m */,
+				53828CBA1D84650700719F73 /* RSRListItemTableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,7 +305,8 @@
 				53828C711D830A4400719F73 /* Images.xcassets in Resources */,
 				53828C481D82F7CF00719F73 /* Main.storyboard in Resources */,
 				53828C6B1D8306DD00719F73 /* SVProgressHUD.bundle in Resources */,
-				53828CAB1D833BE100719F73 /* RSRItemTableCell.xib in Resources */,
+				53828CAB1D833BE100719F73 /* RSRFeedItemTableCell.xib in Resources */,
+				53828CBC1D84650700719F73 /* RSRListItemTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +374,9 @@
 				53828C8F1D83293900719F73 /* Feed.xcdatamodeld in Sources */,
 				53828C8B1D83194F00719F73 /* AbcViewController.m in Sources */,
 				53828C8C1D83194F00719F73 /* RSRAppHelper.m in Sources */,
-				53828CAA1D833BE100719F73 /* RSRItemTableCell.m in Sources */,
+				53828CAA1D833BE100719F73 /* RSRFeedItemTableCell.m in Sources */,
 				53828CA51D8330FB00719F73 /* RSRListItemAddEdit.m in Sources */,
+				53828CBB1D84650700719F73 /* RSRListItemTableCell.m in Sources */,
 				53828C811D83193F00719F73 /* RSRItemDetailedVC.m in Sources */,
 				53828CB71D833E4700719F73 /* FeedItem+CoreDataProperties.m in Sources */,
 				53828C3F1D82F7CF00719F73 /* main.m in Sources */,

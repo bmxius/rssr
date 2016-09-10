@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelFav;
 @property (strong, nonatomic) IBOutlet UISwitch *switchFav;
 @property (strong, nonatomic) IBOutlet UIButton *buttonSave;
+@property (strong, nonatomic) IBOutlet UIButton *buttonKeyboard;
 
 @end
 
@@ -30,7 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNeedsStatusBarAppearanceUpdate];
-    
+    [self keyboardButtonHide];
+    [self.buttonKeyboard addTarget:self action:@selector(actionEndEditing:) forControlEvents:kButtonAction];
     if (self.itemList) {
         self.fieldName.text = self.itemList.name;
         self.fieldURL.text = self.itemList.url;
@@ -47,6 +49,34 @@
 
 - (IBAction)actionSwitch:(UISwitch*)sender{
     
+}
+
+- (void)keyboardButtonShow
+{
+    self.buttonKeyboard.alpha = 1;
+}
+
+- (void)keyboardButtonHide
+{
+    self.buttonKeyboard.alpha = 0;
+}
+
+- (IBAction)actionEndEditing:(id)sender
+{
+    [self.view endEditing:YES];
+    [self keyboardButtonHide];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    [self keyboardButtonShow];
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [self actionEndEditing:nil];
+    return YES;
 }
 
 - (IBAction)actionBack:(id)sender {
@@ -95,7 +125,7 @@
         if (contextDidSave) {
             
             [self showToast:kLocalized(@"DONE")];
-            [[RSRAppHelper sharedInstance] loadFeed:YES];
+            [[RSRAppHelper sharedInstance] loadNewFeed:YES];
             [self popVCWithAnimation];
             
         } else if (error) {

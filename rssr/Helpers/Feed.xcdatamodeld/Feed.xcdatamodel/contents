@@ -7,6 +7,7 @@
         <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="enclosures" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mainName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mainURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +21,7 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FeedItem" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="FeedItem" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="ListItem" positionX="-54" positionY="54" width="128" height="105"/>
     </elements>
 </model>

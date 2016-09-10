@@ -11,7 +11,7 @@
 #import "ListItem+CoreDataProperties.h"
 #import "FeedItem+CoreDataProperties.h"
 #import <MagicalRecord/MagicalRecord.h>
-#import "RSRItemTableCell.h"
+#import "RSRFeedItemTableCell.h"
 
 @interface RSRMainVC () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -22,6 +22,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonAdd;
 @property (strong, nonatomic) IBOutlet UIButton *buttonList;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewList;
+@property (strong, nonatomic) IBOutlet UILabel *labelCenter;
+
+@property (strong, nonatomic) PBWebViewController *webViewController;
 
 @end
 
@@ -43,15 +46,31 @@
     [self.segmentControlList setTitle:kLocalized(@"ALL") forSegmentAtIndex:0];
     [self.segmentControlList setTitle:kLocalized(@"FAVORITES") forSegmentAtIndex:1];
     
-    self.tableViewList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.tableViewList registerNib:[UINib nibWithNibName:@"RSRItemTableCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemTableCell"];
+    self.labelCenter.text = kLocalized(@"EMPTY_LIST");
     
+    self.tableViewList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.tableViewList registerNib:[UINib nibWithNibName:@"RSRFeedItemTableCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemTableCell"];
+    
+    [self.segmentControlList addTarget:self action:@selector(selectorSegment:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self selectorSegment:self.segmentControlList];
+}
+
+- (IBAction)selectorSegment:(UISegmentedControl*)sender{
     
-    _listItems = [ListItem MR_findAll];
+    if (sender.selectedSegmentIndex == 0) {
+        _listItems = [ListItem MR_findAll];
+    } else {
+        _listItems = [ListItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"isFavorite == %@",@1]];
+    }
     [self.tableViewList reloadData];
 }
 
@@ -59,6 +78,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
+    self.labelCenter.hidden = _listItems.count;
     return _listItems.count;
 }
 
@@ -76,20 +96,50 @@
     return item.name;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-}
-
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *identifier = @"ItemTableCell";
-    RSRItemTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    RSRFeedItemTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     ListItem *item = _listItems[indexPath.section];
     cell.itemFeed = [FeedItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"mainURL == %@",item.url]][indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ListItem *item = _listItems[indexPath.section];
+    FeedItem *feedItem = [FeedItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"mainURL == %@",item.url]][indexPath.row];
+    
+    NSString *urlStr = nil;
+    if (feedItem.link) {
+        urlStr = feedItem.link;
+    } else if ([feedItem.identifier isKindOfClass:[NSString class]]){
+        NSURL *url = [NSURL URLWithString:feedItem.identifier];
+        if (url && url.scheme && url.host)
+        {
+            urlStr = feedItem.identifier;
+        }
+    }
+    
+    
+    if (urlStr) {
+        
+        self.webViewController = [[PBWebViewController alloc] init];
+        self.webViewController.URL = [NSURL URLWithString:urlStr];
+        
+        // This property also corresponds to the same one on UIActivityViewController
+        // Both properties do not need to be set unless you want custom actions
+        self.webViewController.excludedActivityTypes = @[UIActivityTypeMail, UIActivityTypeMessage, UIActivityTypePostToWeibo];
+        
+        // Push it
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        [self.navigationController pushViewController:self.webViewController animated:YES];
+    } else {
+        
+        [self showToast:kLocalized(@"ERROR")];
+    }
 }
 
 - (void)openViewListEdit{

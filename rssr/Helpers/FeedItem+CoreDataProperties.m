@@ -24,5 +24,6 @@
 @dynamic mainURL;
 @dynamic mainName;
 @dynamic enclosures;
+@dynamic imageURL;
 
 @end

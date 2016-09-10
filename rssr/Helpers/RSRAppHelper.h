@@ -16,11 +16,7 @@
 
 + (RSRAppHelper*)sharedInstance;
 
-@property (strong, nonatomic) NSMutableDictionary *arrayListAll;
-
-- (NSMutableDictionary*)dictionaryForSelectedFavList:(BOOL)fav;
-- (void)loadFeed:(BOOL)loadNew;
-
+- (void)loadNewFeed:(BOOL)loadNew;
 
 + (void)setStandartImageForImageView:(DFImageView*)imagePreview withItemFeed:(FeedItem*)itemFeed;
 

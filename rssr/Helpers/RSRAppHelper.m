@@ -15,6 +15,7 @@
     NSArray *_defaultsListAll;
     int _loadCounter;
     int _errorCounter;
+    int _imageFinders;
     MWFeedParser *feedParser;
     ListItem *_currentListItem;
 }
@@ -40,30 +41,12 @@
     self = [super init];
     if (self) {
         
-        self.arrayListAll = [NSMutableDictionary new];
         _defaultsListAll = [ListItem MR_findAllSortedBy:@"dateAdded" ascending:YES];
     }
     return self;
 }
 
-- (NSMutableDictionary*)dictionaryForSelectedFavList:(BOOL)fav {
-
-    NSMutableDictionary *returner = [NSMutableDictionary new];
-    
-    if (fav) {
-        for (ListItem *item in _defaultsListAll) {
-            if (item.isFavorite) {
-                 [returner setObject:self.arrayListAll[item.url] forKey:item.url];
-            }
-        }
-    } else {
-        returner = [self.arrayListAll mutableCopy];
-    }
-    
-    return returner;
-}
-
-- (void)loadFeed:(BOOL)loadNew{
+- (void)loadNewFeed:(BOOL)loadNew{
 
     if ([Utils isOnline]) {
         
@@ -137,9 +120,12 @@
     feed.mainURL = _currentListItem.url;
     feed.mainName = _currentListItem.name;
     
-    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:item.enclosures];
-    feed.enclosures = arrayData;
+    if (item.enclosures) {
+        NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:item.enclosures];
+        feed.enclosures = arrayData;
+    }
     
+    [self findImageInItemFeed:feed];
 }
 
 - (void)feedParserDidFinish:(MWFeedParser *)parser{
@@ -166,6 +152,43 @@
     }];
 }
 
+
+- (void)findImageInItemFeed:(FeedItem*)itemFeed{
+    
+    if (itemFeed.enclosures) {
+        NSMutableArray *enclosures = [NSKeyedUnarchiver unarchiveObjectWithData:itemFeed.enclosures];
+        if (enclosures.count>0 && enclosures[0][@"url"]) {
+            itemFeed.imageURL = enclosures[0][@"url"];
+            return;
+        } else {
+            
+        }
+    }
+    
+    if (!itemFeed.content){
+        return;
+    }
+    
+    _imageFinders ++;
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    
+    [regex enumerateMatchesInString:itemFeed.content
+                            options:0
+                              range:NSMakeRange(0, [itemFeed.content length])
+                         usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                             
+                             NSString *img = [itemFeed.content substringWithRange:[result rangeAtIndex:2]];
+                             if (img) {
+                                 itemFeed.imageURL = img;
+                             } else {
+                                 
+                             }
+                             _imageFinders--;
+                         }];
+}
 
 #pragma mark helpers
 

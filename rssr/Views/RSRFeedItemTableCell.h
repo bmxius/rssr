@@ -1,5 +1,5 @@
 //
-//  RSRItemTableCell.h
+//  RSRFeedItemTableCell.h
 //  rssr
 //
 //  Created by Stig on 09.09.16.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem+CoreDataProperties.h"
 
-@interface RSRItemTableCell : UITableViewCell
+@interface RSRFeedItemTableCell : UITableViewCell
 
 @property (strong, nonatomic) FeedItem *itemFeed;
 

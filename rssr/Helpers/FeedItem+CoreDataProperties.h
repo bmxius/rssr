@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *mainURL;
 @property (nullable, nonatomic, retain) NSString *mainName;
 @property (nullable, nonatomic, retain) NSData *enclosures;
+@property (nullable, nonatomic, retain) NSString *imageURL;
 
 @end
 
