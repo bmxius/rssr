@@ -51,6 +51,8 @@
     if ([Utils isOnline]) {
         
         [FeedItem MR_truncateAll];
+        [DFImageManager removeAllCachedImages];
+        
         _loadCounter = 0;
         _errorCounter = 0;
         if (loadNew) {
@@ -141,17 +143,17 @@
 
 -(void)saveContext {
     
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously|MRSaveParentContexts completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+       
         if (contextDidSave) {
-        
+            
             [self listItemsLoaded];
             
         } else if (error) {
-           
+            
         }
     }];
 }
-
 
 - (void)findImageInItemFeed:(FeedItem*)itemFeed{
     

@@ -47,6 +47,53 @@
     [self.buttonSave setTitle:kLocalized(@"SAVE") forState:kControlState];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [kDefaultCenter addObserver:self selector:@selector(actionFeedLoaded:) name:kNotificationFeed object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [kDefaultCenter removeObserver:self name:kNotificationFeed object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self askPastboard];
+}
+
+- (void)askPastboard{
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (pasteboard.string.length){
+        NSURL *url = [NSURL URLWithString:pasteboard.string];
+        if (url && url.scheme && url.host)
+        {
+            UIAlertController *selectorAlert = [UIAlertController alertControllerWithTitle:kLocalized(@"SHOULD_ADD_THIS_URL") message:pasteboard.string preferredStyle:UIAlertControllerStyleAlert];
+            
+            [selectorAlert addAction:[UIAlertAction actionWithTitle:kLocalized(@"YES") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                self.fieldURL.text = pasteboard.string;
+            }]];
+            [selectorAlert addAction:[UIAlertAction actionWithTitle:[kLocalized(@"CANCEL") capitalizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [self presentViewController:selectorAlert animated:YES completion:^{
+                
+            }];
+        }
+    }
+}
+
+- (void)actionFeedLoaded:(NSNotification*)notification{
+    
+    [Utils hidePreloader];
+    if (notification.object && [notification.object boolValue]) {
+        [self showToast:@"LOADED_WITH_ERRORS"];
+    }
+    [self popVCWithAnimation];
+}
+
 - (IBAction)actionSwitch:(UISwitch*)sender{
     
 }
@@ -85,23 +132,28 @@
 
 - (void)actionSave{
     
+    if (![Utils isOnline]) {
+        [self showToast:kLocalized(@"NO_INTERNET")];
+        return;
+    }
+    
+    ListItem *existingTitle = [[ListItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",self.fieldName.text]] firstObject];
+    ListItem *existingURL = [[ListItem MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"url == %@",self.fieldURL.text]] firstObject];
+    
+    if ((!self.itemList && existingTitle) || (self.itemList && existingTitle && [existingURL.url isEqualToString:self.fieldURL.text])) {
+        [self showToast:kLocalized(@"ITEM_WITH_THIS_NAME_EXISTS")];
+        return;
+    }
+    if ((!self.itemList && existingURL) || (self.itemList && existingURL && [existingURL.name isEqualToString:self.fieldName.text])) {
+        [self showToast:kLocalized(@"THIS_ITEM_URL_EXISTS")];
+        return;
+    }
+    if (!self.fieldName.text.length) {
+        [self showToast:kLocalized(@"TOO_SHORT_NAME")];
+        return;
+    }
+    
     if (!self.itemList) {
-        
-        ListItem *existingTitle = [ListItem MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",self.fieldName.text]];
-        ListItem *existingURL = [ListItem MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"url == %@",self.fieldURL.text]];
-        
-        if (existingTitle) {
-            [self showToast:kLocalized(@"ITEM_WITH_THIS_NAME_EXISTS")];
-            return;
-        }
-        if (existingURL) {
-            [self showToast:kLocalized(@"THIS_ITEM_URL_EXISTS")];
-            return;
-        }
-        if (!self.fieldName.text.length) {
-            [self showToast:kLocalized(@"TOO_SHORT_NAME")];
-            return;
-        }
         
         ListItem *aItem = [ListItem MR_createEntity];
         aItem.isFavorite = @(self.switchFav.isOn);
@@ -121,15 +173,16 @@
 
 -(void)saveContext {
     
+    [Utils showPreloaderWithStatus:kLocalized(@"PROCESSING")];
+    
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
+        
         if (contextDidSave) {
             
-            [self showToast:kLocalized(@"DONE")];
             [[RSRAppHelper sharedInstance] loadNewFeed:YES];
-            [self popVCWithAnimation];
             
         } else if (error) {
-            
+            [Utils hidePreloader];
             [self showToast:kLocalized(@"ERROR")];
         }
     }];

@@ -8,14 +8,11 @@
 
 #import "RSRFeedItemTableCell.h"
 #import "Consts.h"
-#import <DFImageManager/DFImageManagerKit+UI.h>
 
 @interface RSRFeedItemTableCell ()
 
 @property (strong, nonatomic) IBOutlet UILabel *labelTitle;
 @property (strong, nonatomic) IBOutlet UILabel *labelDate;
-@property (strong, nonatomic) IBOutlet UILabel *labelDetail;
-@property (strong, nonatomic) IBOutlet DFImageView *imagePreview;
 
 @end
 
@@ -37,21 +34,20 @@
     _itemFeed = itemFeed;
     if (itemFeed) {
         
-        self.imagePreview.image = nil;
-        self.imagePreview.backgroundColor = [UIColor clearColor];
-        
         [self loadImageWithURL:self.itemFeed.imageURL];
         
         self.labelDate.text = [NSDateFormatter localizedStringFromDate:itemFeed.dateAdded dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
         self.labelTitle.text = itemFeed.title;
         
-        if (itemFeed.summary) {
-            self.labelDetail.text = itemFeed.summary;
-        } else {
-            self.labelDetail.text = @"";
-        }
+//        if (itemFeed.summary) {
+//            self.labelDetail.text = itemFeed.summary;
+//        } else {
+//            self.labelDetail.text = @"";
+//        }
+        
+       // [self.labelDetail sizeToFit];
+        
     } else {
-        self.imagePreview.image = nil;
         self.labelDate.text = @"";
         self.labelTitle.text = @"";
     }
@@ -60,16 +56,15 @@
 
 - (void)loadImageWithURL:(NSString*)url{
     
+    [RSRAppHelper setStandartImageForImageView:self.imagePreview withItemFeed:self.itemFeed];
+    
     if (url) {
-        [[DFImageManager imageTaskForResource:[NSURL URLWithString:url] completion:^(UIImage *image, NSError *error, DFImageResponse *response, DFImageTask *task){
-            if (image && !error) {
-                [self.imagePreview setImage:image];
-            } else {
-                [RSRAppHelper setStandartImageForImageView:self.imagePreview withItemFeed:self.itemFeed];
-            }
-        }] resume];
-    } else {
-       [RSRAppHelper setStandartImageForImageView:self.imagePreview withItemFeed:self.itemFeed];
+      
+        self.imagePreview.allowsAnimations = YES; // Animates images when the response wasn't fast enough
+        self.imagePreview.managesRequestPriorities = YES; // Automatically changes current request priority when image view gets added/removed from the window
+        
+        [self.imagePreview prepareForReuse];
+        [self.imagePreview setImageWithResource:[NSURL URLWithString:url]];
     }
 }
 
